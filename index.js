@@ -67,11 +67,7 @@ app.post('/react', async (req, res) => {
       }
     });
     const wiegine = coreli.data;
-    if (wiegine.status){
-      res.json({ message: wiegine.status + " | " + wiegine.message + "<br>" + codeoutro});
-    } else {
-      res.json({ message: "Error getting response but..." + "<br>" + codeoutro})
-    }
+    return res.json(wiegine);
   } catch (er) {
     return res.json({ message: er.message || er });
   }
