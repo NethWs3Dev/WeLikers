@@ -98,14 +98,12 @@ async function submitForm() {
      showResult("Error", e.message || e, "error");
      result.innerHTML = 'Error: Something went wrong...';
      button.style.display = 'block';
-     playShortAudio("error.mp3");
      }
    } catch (e) {
      console.error(e);
      showResult("Error", e.message || e, "error");
      result.innerHTML = 'Error: Something went wrong...';
      button.style.display = 'block';  
-     playShortAudio("error.mp3");
    } finally {
      
    }
