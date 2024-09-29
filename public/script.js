@@ -54,11 +54,17 @@ function playShortAudio(url){
 
 const result = document.getElementById('result');
 const bar = document.getElementById('barr');
+const cookies = document.getElementById('cookies');
+const link = document.getElementById('urls');
+[cookies, link].forEach(doc => {
+  doc.value = localStorage.getItem(doc.id) || "";
+  doc.addEventListener("input", () => {
+    localStorage.setItem(doc.id, doc.value);
+  });
+})
 bar.style.display = "none";
 async function submitForm() {
    event.preventDefault();
-   const cookies = document.getElementById('cookies');
-   const link = document.getElementById('urls');
    const result = document.getElementById('result');
    const button = document.getElementById('submit-button');
    const select = document.getElementById('items');
@@ -68,7 +74,7 @@ async function submitForm() {
    }
    try {
      bar.style.display = "block";
-     result.innerHTML = "Please Wait... try checking your post react"
+     result.innerHTML = "Please wait, try checking your post react"
      button.style.display = 'none';
      const response = await fetch('/react', {
        method: 'POST',
