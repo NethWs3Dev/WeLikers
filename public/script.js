@@ -89,14 +89,14 @@ async function submitForm() {
      result.innerHTML = data.message;
      button.style.display = 'block';
      } else {
-     //showResult("Error", e.message || e, "error");
+     showResult("Error", e.message || e, "error");
      result.innerHTML = 'Error: Something went wrong...';
      button.style.display = 'block';
      playShortAudio("error.mp3");
      }
    } catch (e) {
      console.error(e);
-     //showResult("Error", e.message || e, "error");
+     showResult("Error", e.message || e, "error");
      result.innerHTML = 'Error: Something went wrong...';
      button.style.display = 'block';  
      playShortAudio("error.mp3");
